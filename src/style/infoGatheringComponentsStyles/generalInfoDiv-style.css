@@ -1,0 +1,66 @@
+.personal-info-div, .education-info-div, .work-experience-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 900px;
+    background-color: white;
+    box-shadow: 2px 2px 5px 3px gray;
+    border-radius: 15px;
+}
+
+.info-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+}
+
+.info-title-div {
+    padding-bottom: 10px;
+}
+
+.info-title {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    width: 130px;
+    font-weight: 600;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    flex-grow: 1;
+    height: 25px;
+}
+
+.form-btn-div {
+    width: 600px;
+    display: flex;
+    padding-left: 140px;
+}
+
+.form-btn {
+    flex-grow: 1;
+    height: 25px;
+}

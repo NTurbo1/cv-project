@@ -1,0 +1,12 @@
+.info-gathering-div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    background-color: rgb(223, 223, 223);
+    width: 100vw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: space-around;
+    box-shadow: 0 3px 7px 1px gray;
+}

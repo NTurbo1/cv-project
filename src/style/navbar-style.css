@@ -1,0 +1,12 @@
+.nav-bar {
+    display: flex;
+    height: 100px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(89, 89, 89);
+}
+
+#nav-bar-header {
+    font-size: 40px;
+}

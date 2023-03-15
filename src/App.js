@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { NavBar } from "./components/navBar";
+import { InformationGatheringDiv } from "./components/InfoGatheringComponents/infoGatheringDiv";
+import { CVLayoutDiv } from "./components/cv-layout/cv-layout-div";
+import { Footer } from "./components/footer";
+
+import './style/navbar-style.css';
+import './style/general-style.css';
+import './style/infoGatheringComponentsStyles/infoGatheringDiv-style.css';
+import './style/infoGatheringComponentsStyles/generalInfoDiv-style.css';
+import './style/infoGatheringComponentsStyles/personalInfoDiv-style.css';
+import './style/cv-layout-styles/cv-layout-style.css';
+import './style/cv-layout-styles/cv-layout-div-style.css';
+import './style/footer-style.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <InformationGatheringDiv />
+      <CVLayoutDiv />
+      <Footer />
     </div>
   );
 }
