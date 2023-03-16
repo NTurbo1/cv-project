@@ -1,51 +1,79 @@
-const React = require('react');
+import { DynamicInfoDiv } from "./dynamicInfoDiv";
 
-class WorkExperienceInfoDiv extends React.Component {
+class WorkExperienceInfoDiv extends DynamicInfoDiv {
 
     constructor(props) {
         super(props);
         this.state = {
-            workExperiences: ['work-1'],
-            buttons: []
+            workExperiences: [],
+            buttonId: 'new-work-input-btn',
+            inputFieldRendered: false
         }
-
-        this.addWorkExperience = this.addWorkExperience.bind(this);
     }
 
-    newWorkExperienceDiv(workExperienceInputId) {
+    renderCurrentBtn() {
+        if (this.state.buttonId === 'new-work-input-btn') {
+            return (
+                <div className='new-input-btn-div'>
+                    <button className='new-input-btn' 
+                        id={this.state.buttonId}
+                        onClick={e => {
+                            this.setState({buttonId:'save-new-work-input-btn', 
+                                        inputFieldRendered: true});
+                        }}>
+                        +
+                    </button>
+                </div>
+            );
+        } 
+
         return (
-            <div className='work-experience-input-div input-div'>
-                <label htmlFor={workExperienceInputId}>Work Experience</label>
-                <input id={workExperienceInputId} className='info-input' typeof='text'/>
+            <div className="save-new-input-btn-div">
+                <button className='save-new-input-btn' 
+                    id={this.state.buttonId} 
+                    onClick={e => {
+                        const input = document.getElementById('work-experience-input');
+                        const inputText = input.value;
+                        if (inputText.length > 0) {
+                            const id = 'work-' + this.state.workExperiences.length;
+                            this.setState({ workExperiences: this.state.workExperiences
+                                                        .concat([{id: id, description: inputText}]), 
+                                            buttonId:'new-work-input-btn', 
+                                            inputFieldRendered: false });
+                        }
+                    }}>
+                    Add
+                </button>
             </div>
         );
     }
 
-    addWorkExperience() {
-        let id = 'work-' + this.state.workExperiences.length;
-        this.setState({workExperiences: this.state.workExperiences.concat([id])});
-    }
-
-    render() {
+    render() { /* Inherited method*/
         return (
-            <div className='info-div' id='work-experience-info-div'>
-                <div className='info-title-div'>
-                    <h1 className='info-title'>Work Experience</h1>
+            <div className='info-div'>
+                {this.infoTitleDiv('Work Experience') /* Inherited method*/}
+
+                <div className="saved-inputs-div">
+                    {this.state.workExperiences.map(work => {
+                            return (
+                                <div className="saved-input-div" key = {work.id}>
+                                    <h3 className="saved-input-description">
+                                        {work.description}
+                                    </h3>
+                                </div>
+                            );
+                    })}
                 </div>
 
                 <form id='work-experience-form' className='info-form'>
-                    {this.state.workExperiences.map(workId => {
-                        return this.newWorkExperienceDiv(workId);
-                    })}
+                    {this.state.inputFieldRendered 
+                        ? this.newInputDiv('work-experience-input', 'Work Experience')  /* Inherited method*/
+                        : <div></div>}
                 </form>
 
-                <div className='new-input-btn-div' onClick={this.addWorkExperience}>
-                    <button className='new-input-btn' id='new-work-experience-btn'>Add</button>
-                </div>
+                {this.renderCurrentBtn()}
 
-                <div className='form-btn-div' form='work-experience-form'>
-                        <button className='form-btn' typeof='submit'>Save</button>
-                </div>
+                {this.formSubmitBtn('work-experience-form') /* Inherited method*/}
             </div>
         )
     }
