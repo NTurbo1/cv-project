@@ -1,6 +1,6 @@
-import { EducationInfoDiv } from './eductionInfoDiv';
+import { EducationInfoDiv } from './educationInfoDiv';
 import { PersonalInfoDiv } from './personalInfoDiv';
-import { WorkExperienceDiv } from './workExperienceDiv';
+import { WorkExperienceInfoDiv } from './workExperienceInfoDiv';
 
 const React = require('react');
 
@@ -11,7 +11,7 @@ class InformationGatheringDiv extends React.Component {
             <div className='info-gathering-div'>
                 <PersonalInfoDiv />
                 <EducationInfoDiv />
-                <WorkExperienceDiv />
+                <WorkExperienceInfoDiv />
             </div>
         )
     }

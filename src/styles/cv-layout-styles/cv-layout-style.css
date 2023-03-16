@@ -1,0 +1,17 @@
+.cv-layout {
+    width: 700px;
+    height: 992px;
+    background-color: rgb(211, 211, 211);
+    display: grid;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    box-shadow: 1px 1px 10px 2px gray;
+    border-radius: 15px;
+}
+
+#cv-picture {
+    width: 250px;
+    height: 350px;
+    background-color: gray;
+}

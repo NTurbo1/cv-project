@@ -3,14 +3,14 @@ import { InformationGatheringDiv } from "./components/InfoGatheringComponents/in
 import { CVLayoutDiv } from "./components/cv-layout/cv-layout-div";
 import { Footer } from "./components/footer";
 
-import './style/navbar-style.css';
-import './style/general-style.css';
-import './style/infoGatheringComponentsStyles/infoGatheringDiv-style.css';
-import './style/infoGatheringComponentsStyles/generalInfoDiv-style.css';
-import './style/infoGatheringComponentsStyles/personalInfoDiv-style.css';
-import './style/cv-layout-styles/cv-layout-style.css';
-import './style/cv-layout-styles/cv-layout-div-style.css';
-import './style/footer-style.css';
+import './styles/navbar-style.css';
+import './styles/general-style.css';
+import './styles/infoGatheringComponentsStyles/infoGatheringDiv-style.css';
+import './styles/infoGatheringComponentsStyles/generalInfoDiv-style.css';
+import './styles/infoGatheringComponentsStyles/personalInfoDiv-style.css';
+import './styles/cv-layout-styles/cv-layout-style.css';
+import './styles/cv-layout-styles/cv-layout-div-style.css';
+import './styles/footer-style.css';
 
 function App() {
   return (

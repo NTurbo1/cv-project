@@ -5,7 +5,7 @@ class CVLayout extends React.Component {
     render() {
         return (
             <div className='cv-layout'>
-                <h1>there will be CV layout</h1>
+                <img id='cv-picture'/>
             </div>
         )
     }

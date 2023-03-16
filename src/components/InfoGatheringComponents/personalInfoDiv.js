@@ -4,7 +4,7 @@ class PersonalInfoDiv extends React.Component {
 
     render() {
         return (
-            <div className='personal-info-div'>
+            <div className='info-div' id='personal-info-div'>
                 <div className='info-title-div'>
                     <h1 className='info-title'>Personal Info</h1>
                 </div>
