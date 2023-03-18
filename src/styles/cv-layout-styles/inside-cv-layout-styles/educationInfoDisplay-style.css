@@ -1,0 +1,19 @@
+.education-info-display-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.education-main-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.degree-title {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.education-duration-div, .university-name {
+    font-size: 13px;
+}

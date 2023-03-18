@@ -1,0 +1,27 @@
+.profile-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-header-and-line-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    font-weight: bold;
+    font-size: 25px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.under-profile-header-line {
+    width: 100%;
+    height: 4px;
+    background-color: var(--last-name-header-color);
+}
+
+.profile-text {
+    font-size: 13px;
+}

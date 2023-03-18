@@ -1,0 +1,34 @@
+.contacts-div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contacts-header-div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.under-contacts-header-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--last-name-header-color);
+}
+
+.contacts-display-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.phone-icon, .email-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.phone-display, .email-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

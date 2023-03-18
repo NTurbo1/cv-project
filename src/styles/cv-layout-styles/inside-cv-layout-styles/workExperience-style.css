@@ -1,0 +1,29 @@
+.work-experience-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.work-experience-header-and-line-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-experience-header {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.under-work-experience-header-line {
+    width: 100%;
+    height: 4px;
+    background-color: var(--last-name-header-color);
+}
+
+.work-experience-instances-div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

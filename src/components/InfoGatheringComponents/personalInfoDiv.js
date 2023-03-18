@@ -27,7 +27,7 @@ class PersonalInfoDiv extends React.Component {
 
                     <div className='email-input-div input-div'>
                         <label htmlFor='email'>Email</label>
-                        <input id='email' className='personal-info-input' typeof='email'/>
+                        <input id='email' className='personal-info-input' typeof='email' required/>
                     </div>
                 </form>
 

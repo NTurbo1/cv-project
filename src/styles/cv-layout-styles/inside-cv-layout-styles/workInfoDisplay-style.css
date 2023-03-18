@@ -1,0 +1,19 @@
+.work-info-display-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jobs-main-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.job-duration-div, .company-name, .jobs-description {
+    font-size: 13px;
+}

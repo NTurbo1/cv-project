@@ -1,0 +1,42 @@
+:root {
+    --last-name-header-color: rgb(250, 176, 38)
+}
+
+.name-position-photo-div {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+#cv-picture {
+    width: 225px;
+    height: 300px;
+    background-color: gray;
+}
+
+.name-position-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100px;
+}
+
+.fullName-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-name-header {
+    font-size: 20px;
+}
+
+.last-name-header {
+    color: var(--last-name-header-color);
+    font-size: 25px;
+
+}
+
+.position-header {
+    font-weight: 100;
+    font-size: 14px;
+}
