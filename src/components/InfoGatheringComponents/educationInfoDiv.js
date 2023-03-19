@@ -1,4 +1,7 @@
+import uniqid from 'uniqid';
 import { DynamicInfoDiv } from './dynamicInfoDiv';
+
+import closeIcon from '../../close-icon.png';
 
 class EducationInfoDiv extends DynamicInfoDiv {
     constructor(props) {
@@ -8,6 +11,8 @@ class EducationInfoDiv extends DynamicInfoDiv {
             buttonId: 'new-degree-input-btn',
             inputFieldRendered: false
         }
+
+        this.removeDegreeAt = this.removeDegreeAt.bind(this);
     }
 
     renderCurrentBtn() {
@@ -34,7 +39,7 @@ class EducationInfoDiv extends DynamicInfoDiv {
                         const input = document.getElementById('degree-input');
                         const inputText = input.value;
                         if (inputText.length > 0) {
-                            const id = 'degree-' + this.state.degrees.length;
+                            const id = uniqid();
                             this.setState({ degrees: this.state.degrees
                                                         .concat([{id: id, description: inputText}]), 
                                             buttonId:'new-degree-input-btn', 
@@ -62,6 +67,16 @@ class EducationInfoDiv extends DynamicInfoDiv {
         );
     }
 
+    removeDegreeAt(index) { // Sets the state
+        const degreesList = this.state.degrees;
+        degreesList.splice(index, 1);
+        this.setState(
+            {
+                degrees: degreesList
+            }
+        )
+    }
+
     render() { /* Inherited method*/
         return (
             <div className='info-div'>
@@ -69,13 +84,32 @@ class EducationInfoDiv extends DynamicInfoDiv {
 
                 <div className="saved-inputs-div">
                     {this.state.degrees.map(degree => {
-                            return (
-                                <div className="saved-input-div" key = {degree.id}>
-                                    <h3 className="saved-input-description">
-                                        {degree.description}
-                                    </h3>
+                        return (
+                            <div className="saved-input-div" 
+                                key = {degree.id}
+                                id = {degree.id}
+                            >
+                                <h3 className="saved-input-description">
+                                    {degree.description}
+                                </h3>
+                                <div className="close-icon-div">
+                                    <img
+                                        src = {closeIcon}
+                                        alt = "#"
+                                        className="close-icon"
+                                        onClick={e => {
+                                            const closeIconDiv = e.target.parentElement;
+                                            const savedInputDiv = closeIconDiv.parentElement;
+                                            const degreeObject = this.state.degrees.find(
+                                                elem => elem.id === savedInputDiv.id
+                                            );
+                                            const degreeIndex = this.state.degrees.indexOf(degreeObject);
+                                            this.removeDegreeAt(degreeIndex);
+                                        }}
+                                    ></img>
                                 </div>
-                            );
+                            </div>
+                        );
                     })}
                 </div>
 

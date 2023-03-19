@@ -1,4 +1,7 @@
+import uniqid from 'uniqid';
 import { DynamicInfoDiv } from "./dynamicInfoDiv";
+
+import closeIcon from '../../close-icon.png';
 
 class WorkExperienceInfoDiv extends DynamicInfoDiv {
 
@@ -35,7 +38,7 @@ class WorkExperienceInfoDiv extends DynamicInfoDiv {
                         const input = document.getElementById('work-experience-input');
                         const inputText = input.value;
                         if (inputText.length > 0) {
-                            const id = 'work-' + this.state.workExperiences.length;
+                            const id = uniqid();
                             this.setState({ workExperiences: this.state.workExperiences
                                                         .concat([{id: id, description: inputText}]), 
                                             buttonId:'new-work-input-btn', 
@@ -62,6 +65,16 @@ class WorkExperienceInfoDiv extends DynamicInfoDiv {
         );
     }
 
+    removeWorkExperienceAt(index) { // Sets the state
+        const workExperiencesList = this.state.workExperiences;
+        workExperiencesList.splice(index, 1);
+        this.setState(
+            {
+                workExperiences: workExperiencesList
+            }
+        )
+    }
+
     render() { /* Inherited method*/
         return (
             <div className='info-div'>
@@ -70,10 +83,29 @@ class WorkExperienceInfoDiv extends DynamicInfoDiv {
                 <div className="saved-inputs-div">
                     {this.state.workExperiences.map(work => {
                             return (
-                                <div className="saved-input-div" key = {work.id}>
+                                <div className="saved-input-div" 
+                                    key = {work.id}
+                                    id = {work.id}
+                                >
                                     <h3 className="saved-input-description">
                                         {work.description}
                                     </h3>
+                                    <div className="close-icon-div">
+                                        <img
+                                            src = {closeIcon}
+                                            alt = "#"
+                                            className="close-icon"
+                                            onClick={e => {
+                                                const closeIconDiv = e.target.parentElement;
+                                                const savedInputDiv = closeIconDiv.parentElement;
+                                                const workExperienceObject = this.state.workExperiences.find(
+                                                    elem => elem.id === savedInputDiv.id
+                                                );
+                                                const workExperienceIndex = this.state.workExperiences.indexOf(workExperienceObject);
+                                                this.removeWorkExperienceAt(workExperienceIndex);
+                                            }}
+                                        ></img>
+                                    </div>
                                 </div>
                             );
                     })}
