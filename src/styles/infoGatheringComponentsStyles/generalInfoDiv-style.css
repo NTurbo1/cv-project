@@ -76,7 +76,7 @@ input {
     padding-left: 150px;
 }
 
-.new-input-btn, .save-new-input-btn {
+.new-input-btn, .save-new-input-btn, .close-new-input-btn {
     flex-grow: 1;
     height: 25px;
     color: white;
@@ -96,6 +96,11 @@ input {
     background-color: rgb(68, 84, 228);
 }
 
+.save-new-input-btn-div {
+    display: flex;
+    gap: 10px;
+}
+
 .save-new-input-btn {
     background-color: rgb(94, 220, 140);
     font-size: 18px;
@@ -103,6 +108,15 @@ input {
 
 .save-new-input-btn:hover {
     background-color: rgb(20, 189, 20);
+}
+
+.close-new-input-btn {
+    background-color: rgb(255, 114, 114);
+    font-size: 18px;
+}
+
+.close-new-input-btn:hover {
+    background-color: red;
 }
 
 .form-btn {

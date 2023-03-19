@@ -44,6 +44,20 @@ class WorkExperienceInfoDiv extends DynamicInfoDiv {
                     }}>
                     Add
                 </button>
+
+                <button className='close-new-input-btn'
+                    id = 'close-new-work-input-btn' 
+                    onClick={e => {
+                        this.setState(
+                            {
+                                buttonId:'new-work-input-btn', 
+                                inputFieldRendered: false
+                            }
+                        );
+                    }}
+                >
+                    Close
+                </button>
             </div>
         );
     }

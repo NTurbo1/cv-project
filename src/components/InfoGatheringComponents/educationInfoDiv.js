@@ -40,8 +40,23 @@ class EducationInfoDiv extends DynamicInfoDiv {
                                             buttonId:'new-degree-input-btn', 
                                             inputFieldRendered: false });
                         }
-                    }}>
+                    }}
+                >
                     Add
+                </button>
+
+                <button className='close-new-input-btn'
+                    id = 'close-new-degree-input-btn' 
+                    onClick={e => {
+                        this.setState(
+                            {
+                                buttonId:'new-degree-input-btn', 
+                                inputFieldRendered: false
+                            }
+                        );
+                    }}
+                >
+                    Close
                 </button>
             </div>
         );
